@@ -11,22 +11,14 @@
     </header>
     
     <div class="container">
-        <form method = "POST" action="{% url 'contact' %}">
-        {% csrf_token %}
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name..">
-    
-            <label for="mnumber">Phone Number</label>
-            <input type="text" id="mnumber" name="mnumber" placeholder="Your Phone Number..">
-    
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
-    
-            <input type="submit" value="Submit">
+        <form method = "post" action="{% url 'contact' %}">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button>Send</button>
     
         </form>
     </div>
-
-    <!-- Continue with the rest of your HTML content -->
 </body>
 </html>
